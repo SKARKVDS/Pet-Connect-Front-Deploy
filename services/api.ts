@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:7777/api", // Replace with your API base URL
+    baseURL: "https://pet-connect-back-deploy.onrender.com/api", // Replace with your API base URL
     timeout: 10000, // Timeout in milliseconds
     headers: {
         'Content-Type': 'application/json',
