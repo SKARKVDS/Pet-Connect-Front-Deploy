@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.5rem;
+    --sidebar-background: 60 9.1% 97.8%;
+    --sidebar-foreground: 20 14.3% 4.1%;
+    --sidebar-primary: 24 9.8% 10%;
+    --sidebar-primary-foreground: 60 9.1% 97.8%;
+    --sidebar-accent: 60 4.8% 95.9%;
+    --sidebar-accent-foreground: 20 14.3% 4.1%;
+    --sidebar-border: 20 5.9% 90%;
+    --sidebar-ring: 20 14.3% 4.1%;
+    --sidebar-input: 20 5.9% 90%;
+
+
+    --fc-small-font-size: theme(fontSize.sm);
+    --fc-page-bg-color: theme(colors.background);
+    --fc-neutral-bg-color: theme(colors.muted.DEFAULT);
+    --fc-neutral-text-color: theme(colors.foreground);
+    --fc-border-color: theme(colors.border);
+
+    --fc-button-text-color: theme(colors.foreground);
+    --fc-button-bg-color: theme(colors.background);
+    --fc-button-border-color: theme(colors.input);
+    --fc-button-hover-bg-color: theme(colors.accent.DEFAULT);
+    --fc-button-hover-border-color: theme(colors.input);
+    --fc-button-active-bg-color: theme(colors.accent.DEFAULT);
+    --fc-button-active-border-color: theme(colors.input);
+
+    --fc-event-bg-color: theme(colors.primary.DEFAULT);
+    --fc-event-border-color: theme(colors.input);
+    --fc-event-text-color: theme(colors.primary.foreground);
+    --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+    --fc-more-link-bg-color: #d0d0d0;
+    --fc-more-link-text-color: inherit;
+
+    --fc-event-resizer-thickness: 8px;
+    --fc-event-resizer-dot-total-width: 8px;
+    --fc-event-resizer-dot-border-width: 1px;
+
+    --fc-non-business-color: rgba(215, 215, 215, 0.3);
+    --fc-bg-event-color: rgb(143, 223, 130);
+    --fc-bg-event-opacity: 0.3;
+    --fc-highlight-color: theme(colors.primary.DEFAULT / 10%);
+    --fc-today-bg-color: theme(colors.primary.DEFAULT / 10%);
+    --fc-now-indicator-color: red;
+
+    --fc-list-event-hover-bg-color: theme(colors.primary.DEFAULT / 10%);
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    --sidebar-background: 24 9.8% 8%;
+    --sidebar-foreground: 60 9.1% 97.8%;
+    --sidebar-primary: 20.5 90.2% 48.2%;
+    --sidebar-primary-foreground: 60 9.1% 97.8%;
+    --sidebar-accent: 24 9.8% 12%;
+    --sidebar-accent-foreground: 60 9.1% 97.8%;
+    --sidebar-border: 12 6.5% 15.1%;
+    --sidebar-ring: 20.5 90.2% 48.2%;
+    --sidebar-input: 12 6.5% 15.1%;
+  }
+
+
+  /* Toolbar buttons */
+  .fc {
+    .fc-button {
+      @apply inline-flex h-10 items-center justify-center rounded-md px-3 text-sm font-medium capitalize;
+      .fc-icon {
+        @apply text-sm/none;
+      }
+    }
+    .fc-button-primary {
+      @apply focus:!shadow-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+      &.fc-button-active {
+        @apply focus:shadow-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background;
+      }
+    }
+  }
+  /* Toolbar */
+  .fc .fc-toolbar {
+    @apply grid gap-3 md:flex md:items-center md:justify-between;
+    .fc-toolbar-chunk + .fc-toolbar-title {
+      @apply order-1 md:order-none;
+    }
+  }
+  /* Toolbar title */
+  .fc .fc-toolbar-title {
+    @apply text-2xl font-bold tracking-tight;
+  }
+  /* Calendar header cell */
+  .fc .fc-col-header-cell-cushion,
+  .fc .fc-timegrid-slot-label-cushion,
+  .fc .fc-timegrid-axis-cushion {
+    @apply text-base/7 font-semibold;
+  }
+  /* Calendar: month day number */
+  .fc .fc-daygrid-day-number {
+    @apply cursor-pointer text-base/7 font-medium;
+  }
+  .fc .fc-daygrid-month-start {
+    @apply text-lg/7 font-semibold;
+  }
+  /* List text */
+  .fc-list-day-text,
+  .fc-list-day-side-text {
+    @apply text-base/7 font-semibold;
+  }
+  .fc-h-event .fc-event-main-frame {
+    @apply items-center;
+  }
+  .fc .fc-list-event-time,
+  .fc .fc-event-time {
+    @apply align-middle text-sm/none font-normal;
+  }
+  .fc .fc-event-time {
+    @apply mr-2;
+  }
+
+  .fc .fc-list-event-title {
+    @apply align-middle text-sm/none font-semibold;
+  }
+
+  /* Event inside month view */
+  .fc .fc-daygrid-event {
+    @apply rounded-md font-medium;
+  }
+  .fc .fc-h-event .fc-event-main {
+    @apply px-1;
+  }
+  /* MultiMonth */
+  .fc .fc-multimonth-multicol .fc-daygrid-more-link {
+    @apply border-primary bg-primary text-[10px] leading-4 text-primary-foreground;
+  }
+
+  /* Mulimonth popup */
+  .fc-theme-standard .fc-popover {
+    @apply rounded-md;
+  }
+
+  .fc-popover-header {
+    @apply px-3;
+    .fc-popover-title {
+      @apply text-base/10 font-bold tracking-tight;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
