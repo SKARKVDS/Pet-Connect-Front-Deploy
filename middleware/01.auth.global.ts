@@ -14,7 +14,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     }
     else if(token.value && (to.path.startsWith('/admin'))){
 
-        const {data,error, status } = await useFetch('http://localhost:7777/api/user/checkTokenAdmin', {
+        const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/user/checkTokenAdmin', {
           onRequest({ request, options }) {
             // Set the request headers
             // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -31,7 +31,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
 
     }
     else if (token.value) {
-        const {data,error, status } = await useFetch('http://localhost:7777/api/user/checkToken', {
+        const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/user/checkToken', {
           onRequest({ request, options }) {
             // Set the request headers
             // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -50,7 +50,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
     }
 
   if(token.value && (to.path.startsWith('/admin/specie/race/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/specie/admin/exist/' + to.params.id, {
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/specie/admin/exist/' + to.params.id, {
       onRequest({ request, options }) {
         // Set the request headers
         // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -67,7 +67,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if(token.value && (to.path.startsWith('/admin/user/pet/') || to.path.startsWith('/admin/user/proposal/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/user/admin/exist/' + to.params.id, {
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/user/admin/exist/' + to.params.id, {
       onRequest({ request, options }) {
         // Set the request headers
         // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -84,7 +84,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if(token.value && (to.path.startsWith('/admin/forum/topic/post/') || to.path.startsWith('/forum/topic/post/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/topic/exist/' + to.params.id)
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/topic/exist/' + to.params.id)
 
     if(error.value !== null){
       if(!error.value.data.success){
@@ -92,7 +92,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       }
     }
   }else if(token.value && (to.path.startsWith('/admin/forum/topic/') || to.path.startsWith('/forum/topic/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/forum/exist/' + to.params.id)
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/forum/exist/' + to.params.id)
 
     if(error.value !== null){
       if(!error.value.data.success){
@@ -102,7 +102,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if(token.value && (to.path.startsWith('/pet/vaccine/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/pet/accessible/' + to.params.id, {
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/pet/accessible/' + to.params.id, {
       onRequest({ request, options }) {
         // Set the request headers
         // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -119,7 +119,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if(token.value && (to.path.startsWith('/reservation/request/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/reservation/request/accessible/' + to.params.id, {
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/reservation/request/accessible/' + to.params.id, {
       onRequest({ request, options }) {
         // Set the request headers
         // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -136,7 +136,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if(token.value && (to.path.startsWith('/reservation/proposal/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/reservation/proposal/accessible/' + to.params.id, {
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/reservation/proposal/accessible/' + to.params.id, {
       onRequest({ request, options }) {
         // Set the request headers
         // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
@@ -153,7 +153,7 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
   }
 
   if(token.value && (to.path.startsWith('/memories/'))){
-    const {data,error, status } = await useFetch('http://localhost:7777/api/reservation/memory/accessible/' + to.params.id, {
+    const {data,error, status } = await useFetch('https://pet-connect-back-deploy.onrender.com/api/reservation/memory/accessible/' + to.params.id, {
       onRequest({ request, options }) {
         // Set the request headers
         // note that this relies on ofetch >= 1.4.0 - you may need to refresh your lockfile
